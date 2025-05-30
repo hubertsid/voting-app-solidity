@@ -1,5 +1,5 @@
 // Replace this with your deployed contract address
-const contractAddress = "YOUR_CONTRACT_ADDRESS_HERE";
+const contractAddress = "0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3";
 
 let provider;
 let signer;
