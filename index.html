@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting DApp</title>
+</head>
+<body>
+    <h1>Voting DApp Frontend</h1>
+    <button onclick="connectWallet()">Connect Wallet</button>
+
+    <h2>Proposals</h2>
+    <div id="proposals"></div>
+
+    <input type="number" id="proposalIndex" placeholder="Proposal index">
+    <button onclick="vote()">Vote</button>
+
+    <button onclick="getWinner()">Get Winner</button>
+    <p id="winner"></p>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
