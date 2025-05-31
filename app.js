@@ -27,8 +27,10 @@ async function loadProposals() {
             const proposal = await contract.proposals(i);
             const name = ethers.utils.parseBytes32String(proposal.name);
             const count = proposal.voteCount.toString();
+            alert(`<p>${i}: ${name} - ${count} votes</p>`);
             proposalsDiv.innerHTML += `<p>${i}: ${name} - ${count} votes</p>`;
         } catch {
+            alert('nope');
             break; // End of proposals
         }
     }
