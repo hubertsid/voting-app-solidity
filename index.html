@@ -2,23 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Voting DApp</title>
+    <title>Split Voting DApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+        #proposals, #winner {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Voting DApp Frontend</h1>
+    <h1>Split Voting DApp</h1>
     <button onclick="connectWallet()">Connect Wallet</button>
 
-    <h2>Proposals</h2>
+    <h2>Candidates</h2>
     <div id="proposals"></div>
 
-    <input type="number" id="proposalIndex" placeholder="Proposal index">
+    <h3>Cast Your Vote</h3>
+    <input type="number" id="proposalIndex" placeholder="Candidate index">
     <button onclick="vote()">Vote</button>
 
-    <button onclick="getWinner()">Get Winner</button>
+    <h3>Results</h3>
+    <button onclick="getWinner()">Get Current Winner</button>
     <p id="winner"></p>
-
-    <button onclick="loadProposals()">Load Proposals</button>
-    <p id="proposal"></p>
 
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script src="app.js"></script>
