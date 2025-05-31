@@ -107,7 +107,7 @@ The **Ballot smart contract** is written in Solidity and contains the logic for 
 ## Hosting & Running Locally
 
 ### Live Demo
-[Visit the Voting DApp on Netlify](https://hubertsid.github.io/voting-app-solidity/)  
+[Visit the Voting DApp on Github Pages](https://hubertsid.github.io/voting-app-solidity/)  
 
 ### Local Setup
 1. Clone the repository:
