@@ -3,7 +3,6 @@
 This project demonstrates a **decentralized voting application (DApp)** built using **blockchain technology**, designed as part of my university coursework on **Decentralized Systems**. It simulates a simple election system based on a **smart contract** deployed on the **Ethereum Sepolia Testnet**, using technologies that represent hybrid architectures (frontend + blockchain backend).
 
 ---
-![image](https://github.com/user-attachments/assets/9ba80d96-4348-42f1-aa28-77cf60ec2bb9)
 
 ## Project Overview
 
