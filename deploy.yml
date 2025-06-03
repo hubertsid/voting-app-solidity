@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Replace CONTRACT_ADDRESS in app.js
+      - name: Replace SEPOLIO_API_KEY in app.js
         run: |
-          sed -i "s/YOUR_CONTRACT_ADDRESS_HERE/${{ secrets.CONTRACT_ADDRESS }}/g" app.js
+          sed -i "s/SEPOLIO_API_KEY/${{ secrets.SEPOLIO_API_KEY }}/g" app.js
       - uses: actions/configure-pages@v3
       - uses: actions/upload-pages-artifact@v2
         with:

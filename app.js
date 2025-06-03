@@ -7,7 +7,9 @@ let provider, signer, contract;
 async function init() {
     try {
         if (window.ethereum) {
-            provider = new ethers.providers.Web3Provider(window.ethereum);
+            const customProvider = new
+            ethers.providers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/SEPOLIO_API_KEY");
+            contract = new ethers.Contract(contractAddress, contractABI, customProvider);
             await provider.send("eth_requestAccounts", []);
             signer = provider.getSigner();
 
