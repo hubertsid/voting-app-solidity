@@ -1,31 +1,34 @@
 // Replace this with your deployed contract address
-const contractAddress = "0xA009502A2D9f5854de4d38b4769A8B1120b46414";
+const contractAddress = "0x63d1026C33af01e5f5204976619E9C4EC3a52DCB";
 
 let provider, signer, contract;
 
-// Function to initialize provider, signer, contract
 async function init() {
     try {
-        if (window.ethereum) {
-            const customProvider = new
-            ethers.providers.JsonRpcProvider("https://eth-sepolia.g.alchemy.com/v2/SEPOLIO_API_KEY");
-            contract = new ethers.Contract(contractAddress, contractABI, customProvider);
-            await provider.send("eth_requestAccounts", []);
-            signer = provider.getSigner();
-
-            const response = await fetch('contractABI.json');
-            const contractABI = await response.json();
-            contract = new ethers.Contract(contractAddress, contractABI, signer);
-
-            console.log("Wallet connected and contract initialized.");
-            loadProposals();
-        } else {
+        if (!window.ethereum) {
             alert("MetaMask not detected. Please install MetaMask.");
+            return;
         }
+
+        // Load contract ABI
+        const response = await fetch('contractABI.json');
+        const contractABI = await response.json();
+
+        // Connect via MetaMask
+        provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        signer = provider.getSigner();
+
+        // Initialize contract with signer (for voting)
+        contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+        console.log("✅ Wallet connected and contract initialized.");
+        loadProposals();
     } catch (error) {
-        console.error("Initialization failed:", error);
+        console.error("❌ Initialization failed:", error);
     }
 }
+
 
 async function loadProposals() {
     const proposalsDiv = document.getElementById("proposals");
